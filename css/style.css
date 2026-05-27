@@ -151,10 +151,12 @@ button {
   background: rgba(0, 0, 0, 0.3);
   z-index: 999;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s ease;
 }
 .mobile-nav-overlay.visible {
   opacity: 1;
+  pointer-events: auto;
 }
 .mobile-nav-close {
   background: none;
