@@ -20,12 +20,8 @@ function initImagePlaceholders() {
   document.querySelectorAll('img').forEach(function(img) {
     var attr = img.getAttribute('src') || '';
 
-    /* ---- Logo: replace .png reference with the SVG we created ---- */
-    if (attr.includes('logo')) {
-      var svgPath = attr.replace('logo.png', 'logo.svg');
-      img.src = svgPath;
-      return;
-    }
+    /* ---- Logo: skip — real PNG is in assets/fotos/ ---- */
+    if (attr.includes('logo')) return;
 
     /* ---- Only act on assets/ images ---- */
     if (!attr.includes('assets/')) return;
