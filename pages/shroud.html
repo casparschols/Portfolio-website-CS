@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shroud — Caspar Schols</title>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/fotos/logo.png" type="image/png">
 </head>
 <body class="project-detail-page">
 
@@ -19,12 +17,25 @@
 
   <main>
 
-    <!-- Top gallery: grid -->
+    <!-- Top slideshow: fullwidth -->
     <section class="detail-gallery-top" aria-label="Shroud gallery">
-      <div class="gallery-grid-3">
-        <img src="../assets/shroud-01.jpg" alt="Shroud — installation in Hooke Park" loading="lazy">
-        <img src="../assets/shroud-02.jpg" alt="Shroud — between trees" loading="lazy">
-        <img src="../assets/shroud-03.jpg" alt="Shroud — jute texture" loading="lazy">
+      <div class="slideshow-wrapper">
+        <div class="slideshow" data-slideshow>
+          <div class="slideshow-slide">
+            <img src="../assets/shroud-01.jpg" alt="Shroud — installation in Hooke Park" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="../assets/shroud-02.jpg" alt="Shroud — between trees" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="../assets/shroud-03.jpg" alt="Shroud — jute texture" loading="lazy">
+          </div>
+        </div>
+        <div class="slideshow-controls">
+          <button class="prev" aria-label="Previous image">←</button>
+          <span class="slideshow-counter" aria-live="polite"></span>
+          <button class="next" aria-label="Next image">→</button>
+        </div>
       </div>
     </section>
 

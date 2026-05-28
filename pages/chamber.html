@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chamber — Caspar Schols</title>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/fotos/logo.png" type="image/png">
 </head>
 <body class="project-detail-page">
 
@@ -19,12 +17,25 @@
 
   <main>
 
-    <!-- Top gallery: freeform layout -->
+    <!-- Top slideshow: fullwidth -->
     <section class="detail-gallery-top" aria-label="Chamber gallery">
-      <div class="freeform-gallery">
-        <img class="img-a" src="../assets/chamber-01.jpg" alt="Chamber — full exterior" loading="lazy">
-        <img class="img-b" src="../assets/chamber-02.jpg" alt="Chamber — sliding walls" loading="lazy">
-        <img class="img-c" src="../assets/chamber-03.jpg" alt="Chamber — interior" loading="lazy">
+      <div class="slideshow-wrapper">
+        <div class="slideshow" data-slideshow>
+          <div class="slideshow-slide">
+            <img src="../assets/chamber-01.jpg" alt="Chamber — full exterior" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="../assets/chamber-02.jpg" alt="Chamber — sliding walls" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="../assets/chamber-03.jpg" alt="Chamber — interior" loading="lazy">
+          </div>
+        </div>
+        <div class="slideshow-controls">
+          <button class="prev" aria-label="Previous image">←</button>
+          <span class="slideshow-counter" aria-live="polite"></span>
+          <button class="next" aria-label="Next image">→</button>
+        </div>
       </div>
     </section>
 
@@ -79,7 +90,7 @@
 
     <div class="detail-video-section">
       <div class="video-wrap">
-        <video autoplay muted loop playsinline aria-label="Chamber video">
+        <video autoplay muted loop playsinline controls aria-label="Chamber video">
           <source src="../assets/fotos/shot-3.mp4" type="video/mp4">
         </video>
       </div>

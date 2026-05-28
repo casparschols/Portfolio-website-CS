@@ -97,30 +97,60 @@ function initSlideshows() {
    MOBILE MENU
    =========================== */
 function initMobileMenu() {
-  var toggle  = document.getElementById('nav-toggle');
-  var mobileNav = document.getElementById('mobile-nav');
-  var closeBtn  = document.getElementById('mobile-nav-close');
-  var overlay   = document.getElementById('mobile-nav-overlay');
+  var toggle         = document.getElementById('nav-toggle');
+  var floatingNav    = document.getElementById('floating-nav');
+  var floatingClose  = document.getElementById('floating-nav-close');
+  var floatingOverlay = document.getElementById('floating-nav-overlay');
+  var mobileNav      = document.getElementById('mobile-nav');
+  var mobileClose    = document.getElementById('mobile-nav-close');
+  var mobileOverlay  = document.getElementById('mobile-nav-overlay');
 
-  if (!toggle || !mobileNav) return;
+  if (!toggle) return;
 
-  function open() {
-    mobileNav.classList.add('open');
-    if (overlay) overlay.classList.add('visible');
+  function openFloating() {
+    if (floatingNav) floatingNav.classList.add('open');
+    if (floatingOverlay) floatingOverlay.classList.add('visible');
     document.body.style.overflow = 'hidden';
   }
-  function close() {
-    mobileNav.classList.remove('open');
-    if (overlay) overlay.classList.remove('visible');
+  function closeFloating() {
+    if (floatingNav) floatingNav.classList.remove('open');
+    if (floatingOverlay) floatingOverlay.classList.remove('visible');
+    document.body.style.overflow = '';
+  }
+  function openMobile() {
+    if (mobileNav) mobileNav.classList.add('open');
+    if (mobileOverlay) mobileOverlay.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobile() {
+    if (mobileNav) mobileNav.classList.remove('open');
+    if (mobileOverlay) mobileOverlay.classList.remove('visible');
     document.body.style.overflow = '';
   }
 
-  toggle.addEventListener('click', open);
-  if (closeBtn)  closeBtn.addEventListener('click', close);
-  if (overlay)   overlay.addEventListener('click', close);
-  mobileNav.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', close);
+  toggle.addEventListener('click', function() {
+    if (window.innerWidth > 768) {
+      openFloating();
+    } else {
+      openMobile();
+    }
   });
+
+  if (floatingClose) floatingClose.addEventListener('click', closeFloating);
+  if (floatingOverlay) floatingOverlay.addEventListener('click', closeFloating);
+  if (floatingNav) {
+    floatingNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', closeFloating);
+    });
+  }
+
+  if (mobileClose) mobileClose.addEventListener('click', closeMobile);
+  if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobile);
+  if (mobileNav) {
+    mobileNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', closeMobile);
+    });
+  }
 }
 
 /* ===========================
@@ -159,6 +189,61 @@ function initFadeIn() {
 }
 
 /* ===========================
+   VIMEO CUSTOM CONTROLS
+   =========================== */
+function initVimeoControls() {
+  if (typeof Vimeo === 'undefined') return;
+
+  document.querySelectorAll('.video-controls').forEach(function(controls) {
+    var iframeId = controls.dataset.target;
+    var iframe = document.getElementById(iframeId);
+    if (!iframe) return;
+
+    var player = new Vimeo.Player(iframe);
+    var playBtn = controls.querySelector('.vc-play');
+    var iconPlay = controls.querySelector('.vc-icon-play');
+    var iconPause = controls.querySelector('.vc-icon-pause');
+    var volumeSlider = controls.querySelector('.vc-volume');
+    var volIcon = controls.querySelector('.vc-vol-icon');
+
+    playBtn.addEventListener('click', function() {
+      player.getPaused().then(function(paused) {
+        if (paused) { player.play(); } else { player.pause(); }
+      });
+    });
+
+    player.on('play', function() {
+      iconPlay.style.display = 'none';
+      iconPause.style.display = 'inline';
+    });
+    player.on('pause', function() {
+      iconPlay.style.display = 'inline';
+      iconPause.style.display = 'none';
+    });
+
+    volumeSlider.addEventListener('input', function() {
+      var val = parseFloat(this.value);
+      player.setVolume(val);
+      volIcon.textContent = val === 0 ? '🔇' : val < 0.5 ? '🔉' : '🔊';
+    });
+
+    volIcon.addEventListener('click', function() {
+      player.getVolume().then(function(vol) {
+        if (vol > 0) {
+          player.setVolume(0);
+          volumeSlider.value = 0;
+          volIcon.textContent = '🔇';
+        } else {
+          player.setVolume(1);
+          volumeSlider.value = 1;
+          volIcon.textContent = '🔊';
+        }
+      });
+    });
+  });
+}
+
+/* ===========================
    INIT
    =========================== */
 document.addEventListener('DOMContentLoaded', function() {
@@ -167,4 +252,5 @@ document.addEventListener('DOMContentLoaded', function() {
   initMobileMenu();
   initBackToTop();
   initFadeIn();
+  initVimeoControls();
 });

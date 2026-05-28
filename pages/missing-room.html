@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Missing Room — Caspar Schols</title>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/fotos/logo.png" type="image/png">
 </head>
 <body class="project-detail-page">
 
@@ -19,12 +17,25 @@
 
   <main>
 
-    <!-- Top gallery: freeform overlapping -->
+    <!-- Top slideshow: fullwidth -->
     <section class="detail-gallery-top" aria-label="The Missing Room gallery">
-      <div class="freeform-gallery">
-        <img class="img-a" src="../assets/missing-room-01.jpg" alt="The Missing Room — full view" loading="lazy">
-        <img class="img-b" src="../assets/missing-room-02.jpg" alt="The Missing Room — chimney detail" loading="lazy">
-        <img class="img-c" src="../assets/missing-room-03.jpg" alt="The Missing Room — water feature" loading="lazy">
+      <div class="slideshow-wrapper">
+        <div class="slideshow" data-slideshow>
+          <div class="slideshow-slide">
+            <img src="../assets/missing-room-01.jpg" alt="The Missing Room — full view" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="../assets/missing-room-02.jpg" alt="The Missing Room — chimney detail" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="../assets/missing-room-03.jpg" alt="The Missing Room — water feature" loading="lazy">
+          </div>
+        </div>
+        <div class="slideshow-controls">
+          <button class="prev" aria-label="Previous image">←</button>
+          <span class="slideshow-counter" aria-live="polite"></span>
+          <button class="next" aria-label="Next image">→</button>
+        </div>
       </div>
     </section>
 
@@ -90,6 +101,10 @@
         </div>
       </div>
     </section>
+
+    <div class="detail-video-section">
+      <div class="detail-placeholder">// video goes here //</div>
+    </div>
 
   </main>
 

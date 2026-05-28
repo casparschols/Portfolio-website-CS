@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caspar Schols — Studio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/fotos/logo.png" type="image/png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -41,15 +39,6 @@
       display: block;
       transform: scale(1);
     }
-    .slide.active img {
-      animation: kenburns 5s ease-out forwards;
-    }
-
-    @keyframes kenburns {
-      from { transform: scale(1.0); }
-      to   { transform: scale(1.06); }
-    }
-
     /* ── Overlay ── */
     #overlay {
       position: fixed;
@@ -59,39 +48,6 @@
       z-index: 10;
     }
 
-    /* ── Logo ── */
-    #logo {
-      position: fixed;
-      top: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 20;
-      width: clamp(70px, 10vw, 110px);
-      opacity: 0;
-      filter: brightness(0) invert(1) drop-shadow(0 1px 8px rgba(0,0,0,0.5));
-      pointer-events: none;
-      animation: fadeHint 0.8s ease forwards 2s;
-    }
-
-    /* ── Hint ── */
-    #hint {
-      position: fixed;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 20;
-      opacity: 0;
-      color: #fff;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-style: italic;
-      font-size: 0.82rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      pointer-events: none;
-      text-shadow: 0 1px 10px rgba(0,0,0,0.7);
-      animation: fadeHint 0.8s ease forwards 2s;
-    }
 
     @keyframes fadeHint {
       to { opacity: 0.8; }
@@ -102,8 +58,6 @@
 
   <div id="stage"></div>
   <div id="overlay"></div>
-  <img id="logo" src="assets/fotos/logo.png" alt="Caspar Schols">
-  <p id="hint">click anywhere to enter</p>
 
   <script>
     var IMAGES = [
@@ -317,13 +271,7 @@
     }
 
     function goTo(index) {
-      /* Deactivate current */
       slides[current].classList.remove('active');
-      /* Restart Ken Burns by cloning the img node */
-      var oldImg = slides[current].querySelector('img');
-      var newImg = oldImg.cloneNode(true);
-      slides[current].replaceChild(newImg, oldImg);
-
       current = (index + slides.length) % slides.length;
       slides[current].classList.add('active');
       loadAhead(current);

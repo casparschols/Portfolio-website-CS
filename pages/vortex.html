@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vortex — Caspar Schols</title>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/fotos/logo.png" type="image/png">
 </head>
 <body class="project-detail-page">
 
@@ -19,13 +17,28 @@
 
   <main>
 
-    <!-- Top gallery: 4-column grid -->
+    <!-- Top slideshow: fullwidth -->
     <section class="detail-gallery-top" aria-label="Vortex gallery">
-      <div class="gallery-grid-4">
-        <img src="../assets/vortex-01.jpg" alt="Vortex — suspended dwelling" loading="lazy">
-        <img src="../assets/vortex-02.jpg" alt="Vortex — ice-age rocks" loading="lazy">
-        <img src="../assets/vortex-03.jpg" alt="Vortex — shading sail" loading="lazy">
-        <img src="../assets/vortex-04.jpg" alt="Vortex — glass layers" loading="lazy">
+      <div class="slideshow-wrapper">
+        <div class="slideshow" data-slideshow>
+          <div class="slideshow-slide">
+            <img src="../assets/vortex-01.jpg" alt="Vortex — suspended dwelling" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="../assets/vortex-02.jpg" alt="Vortex — ice-age rocks" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="../assets/vortex-03.jpg" alt="Vortex — shading sail" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="../assets/vortex-04.jpg" alt="Vortex — glass layers" loading="lazy">
+          </div>
+        </div>
+        <div class="slideshow-controls">
+          <button class="prev" aria-label="Previous image">←</button>
+          <span class="slideshow-counter" aria-live="polite"></span>
+          <button class="next" aria-label="Next image">→</button>
+        </div>
       </div>
     </section>
 
@@ -79,6 +92,9 @@
       </div>
     </section>
 
+    <div class="detail-video-section">
+      <div class="detail-placeholder">// video goes here //</div>
+    </div>
 
   </main>
 
