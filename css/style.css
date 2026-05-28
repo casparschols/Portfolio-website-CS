@@ -138,6 +138,7 @@ button {
   cursor: pointer;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  color: black;
 }
 
 /* Mobile drawer */
