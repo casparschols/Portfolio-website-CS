@@ -48,6 +48,21 @@
       z-index: 10;
     }
 
+    /* ── Logo ── */
+    #logo {
+      position: fixed;
+      top: 38%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    #logo img {
+      width: clamp(80px, 14vw, 160px);
+      mix-blend-mode: multiply;
+      display: block;
+    }
 
     @keyframes fadeHint {
       to { opacity: 0.8; }
@@ -58,6 +73,9 @@
 
   <div id="stage"></div>
   <div id="overlay"></div>
+  <div id="logo">
+    <img src="assets/fotos/logo.png" alt="Caspar Schols">
+  </div>
 
   <script>
     var IMAGES = [

@@ -20,10 +20,10 @@ function initImagePlaceholders() {
   document.querySelectorAll('img').forEach(function(img) {
     var attr = img.getAttribute('src') || '';
 
-    /* ---- Logo: skip — real PNG is in assets/fotos/ ---- */
-    if (attr.includes('logo')) return;
+    /* ---- Skip real files in assets/fotos/ ---- */
+    if (attr.includes('assets/fotos/')) return;
 
-    /* ---- Only act on assets/ images ---- */
+    /* ---- Only act on placeholder assets/ paths ---- */
     if (!attr.includes('assets/')) return;
 
     /* ---- Pick dimensions based on where the image lives ---- */
@@ -227,18 +227,29 @@ function initLightbox() {
     if (Math.abs(diff) > 40) { diff > 0 ? nextLb() : prevLb(); }
   }, { passive: true });
 
-  /* Containers whose images form a group */
-  var CONTAINERS = [
-    '.detail-gallery-top',
-    '.detail-slideshow',
-    '.detail-single-image',
+  /* Slideshow containers — open at the ACTIVE slide, not the clicked DOM element */
+  document.querySelectorAll('[data-slideshow]').forEach(function(slideshow) {
+    var imgs = Array.from(slideshow.querySelectorAll('.slideshow-slide img'));
+    if (!imgs.length) return;
+    imgs.forEach(function(img) { img.style.cursor = 'zoom-in'; });
+    slideshow.addEventListener('click', function(e) {
+      if (e.target.tagName !== 'IMG') return;
+      var activeSlide = slideshow.querySelector('.slideshow-slide.active');
+      var activeImg   = activeSlide ? activeSlide.querySelector('img') : null;
+      var activeIdx   = activeImg ? imgs.indexOf(activeImg) : 0;
+      openLb(imgs, Math.max(0, activeIdx));
+    });
+  });
+
+  /* Plain image containers — attach directly to each image */
+  var PLAIN = [
     '.gallery-row',
     '.freeform-gallery',
     '.product-gallery',
+    '.detail-single-image',
     '.about-image-col'
   ];
-
-  CONTAINERS.forEach(function(sel) {
+  PLAIN.forEach(function(sel) {
     document.querySelectorAll(sel).forEach(function(container) {
       var imgs = Array.from(container.querySelectorAll('img'));
       if (!imgs.length) return;

@@ -11,10 +11,10 @@
   --font-body: 'DM Sans';
   --font-mono: 'DM Sans';
 
-  --text-primary: rgba(0, 0, 0, 0.88);
-  --text-secondary: rgba(0, 0, 0, 0.65);
-  --text-muted: rgba(0, 0, 0, 0.88);
-  --text-faint: rgba(0, 0, 0, 0.22);
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --text-muted: #000000;
+  --text-faint: #000000;
   --border: rgba(0, 0, 0, 0.12);
   --border-strong: rgba(0, 0, 0, 0.25);
   --bg: #fafaf8;
@@ -560,14 +560,12 @@ button {
 }
 
 .detail-header {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: var(--pad);
+  left: var(--pad);
   z-index: 100;
-  padding: 1.2rem var(--pad);
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
+  width: fit-content;
+  background: transparent;
 }
 
 .back-logo img {
