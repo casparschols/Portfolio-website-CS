@@ -81,11 +81,10 @@
     </section>
 
     <div class="detail-video-section">
-      <div class="video-wrap">
-        <iframe src="https://player.vimeo.com/video/1196449226?badge=0&autopause=0&loop=1&muted=1&autoplay=1"
-          frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen aria-label="Video"
-          style="width:100%;height:100%;">
-        </iframe>
+      <div class="video-wrap-small">
+        <video autoplay muted loop playsinline controls aria-label="Axis video">
+          <source src="../vortex/Shot 3 - aangepaste kleur.MP4" type="video/mp4">
+        </video>
       </div>
     </div>
 
@@ -94,26 +93,26 @@
       <div class="slideshow-wrapper">
         <div class="slideshow" data-slideshow>
           <div class="slideshow-slide">
-            <img src="../vortex/Vortex image 1.jpg" alt="Vortex — view 5" loading="lazy">
+            <img src="../vortex/Vortex image 1.jpg" alt="Vortex — view 1" loading="lazy">
           </div>
           <div class="slideshow-slide">
-            <img src="../vortex/Vortex image 2.jpg" alt="Vortex — view 6" loading="lazy">
+            <img src="../vortex/Vortex image 2.jpg" alt="Vortex — view 2" loading="lazy">
           </div>
           <div class="slideshow-slide">
-            <img src="../vortex/Vortex image 3.jpg" alt="Vortex — view 7" loading="lazy">
+            <img src="../vortex/Vortex image 3.jpg" alt="Vortex — view 3" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <img src="../vortex/Vortex image 4.jpg" alt="Vortex — view 4" loading="lazy">
           </div>
         </div>
-        <div class="slideshow-slide">
-          <img src="../vortex/Vortex image 4.jpg" alt="Vortex — view 7" loading="lazy">
+        <div class="slideshow-controls">
+          <button class="prev" aria-label="Previous image">←</button>
+          <span class="slideshow-counter" aria-live="polite"></span>
+          <button class="next" aria-label="Next image">→</button>
         </div>
-      </div>
-      <div class="slideshow-controls">
-        <button class="prev" aria-label="Previous image">←</button>
-        <span class="slideshow-counter" aria-live="polite"></span>
-        <button class="next" aria-label="Next image">→</button>
-      </div>
       </div>
     </section>
+
   </main>
 
   <footer class="detail-footer">
