@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../assets/fotos/logo.png" type="image/png">
 </head>
+
 <body class="project-detail-page">
 
   <header class="detail-header">
@@ -17,61 +19,77 @@
 
   <main>
 
-    <!-- Top gallery: 3 images -->
+    <!-- Top gallery: slideshow (mobile) / horizontal strip (desktop) -->
     <section class="detail-gallery-top" aria-label="Speaking opportunities media">
-      <div class="gallery-grid-3">
-        <img src="../missing room/Overall_8.jpg" alt="Caspar Schols — installation" loading="lazy">
-        <img src="../de-vic/IMG_9393.jpg" alt="Caspar Schols — project" loading="lazy">
-        <img src="../axis/IMG_5128.jpg" alt="Caspar Schols — Axis" loading="lazy">
+      <div class="slideshow-wrapper">
+        <div class="slideshow" data-slideshow style="height: 65vh;">
+          <div class="slideshow-slide">
+            <img src="../Invite caspar to speak/IMG_0238.PNG" alt="Caspar Schols — lecture" loading="lazy">
+          </div>
+          <div class="slideshow-slide">
+            <div style="position:relative;width:100%;height:100%;overflow:hidden;">
+              <iframe src="https://player.vimeo.com/video/1196447133?autoplay=1&muted=1&loop=1&controls=1"
+                frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                style="position:absolute;top:50%;left:50%;height:65vh;width:calc(65vh * 16 / 9);transform:translate(-50%,-50%);border:0;display:block;">
+              </iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+          </div>
+          <div class="slideshow-slide">
+            <img src="../Invite caspar to speak/IMG_0248.PNG" alt="Caspar Schols — talk" loading="lazy">
+          </div>
+        </div>
+        <div class="slideshow-controls">
+          <button class="prev" aria-label="Previous image">←</button>
+          <span class="slideshow-counter" aria-live="polite"></span>
+          <button class="next" aria-label="Next image">→</button>
+        </div>
       </div>
     </section>
 
     <div class="editorial-page">
-      <div class="editorial-hero">
-        <h1 class="project-title">Invite Caspar to Speak</h1>
-        <p class="editorial-location">Globally</p>
+      <div class="editorial-hero editorial-hero-row">
+        <div>
+          <h1 class="project-title">Invite Caspar to Speak</h1>
+          <p class="editorial-location">Globally</p>
+        </div>
+        <div class="editorial-cta">
+          <a href="mailto:info@casparschols.com">Get in touch →</a>
+        </div>
       </div>
 
       <div class="editorial-body">
         <div class="editorial-text">
-          <p>Caspar has given talks about architecture as a basis for performing rituals and for experiencing a sense of place, especially through reconnecting to nature, to one's own body, and to the cosmos.</p>
-          <p>His work is not only shaped by his own experiences with life, but also with the home as an active gateway to its natural- and metaphysical surroundings.</p>
-          <p>Caspar's work has been represented in a wide range of media, including The New York Times, Dezeen, ArchDaily and many others. He has spoken at the Venice Biennale and at The Architectural Association (AA), one of the UK's premier architectural schools, where he also studied.</p>
-          <div class="editorial-cta">
-            <a href="mailto:info@casparschols.com">Get in touch →</a>
-          </div>
+          <p>Caspar has given talks about architecture as a basis for performing rituals and for experiencing a sense of
+            place, especially through reconnecting to nature, to one's own body, and to the cosmos.</p>
+          <p>His work is not only shaped by his own experiences with life, but also with the home as an active gateway
+            to its natural- and metaphysical surroundings.</p>
+          <p>Caspar's work has been represented in a wide range of media, including The New York Times, Dezeen,
+            ArchDaily and many others. He has spoken at the Venice Biennale and at The Architectural Association (AA),
+            one of the UK's premier architectural schools, where he also studied.</p>
         </div>
-        <aside class="editorial-aside">
-          <div class="sidebar-section">
-            <p class="sidebar-label">CONTACT</p>
-            <div class="sidebar-links">
-              <a href="mailto:info@casparschols.com">info@casparschols.com</a>
-            </div>
-          </div>
-          <div class="sidebar-section">
-            <p class="sidebar-label">FOLLOW</p>
-            <div class="sidebar-links">
-              <a href="https://www.instagram.com/casparschols/" target="_blank" rel="noopener noreferrer">@casparschols</a>
-            </div>
-          </div>
-          <div class="sidebar-section">
-            <p class="sidebar-label">VENUES</p>
-            <ul class="sidebar-awards">
-              <li>Venice Biennale</li>
-              <li>The Architectural Association (AA)</li>
-              <li>Universities &amp; festivals worldwide</li>
-            </ul>
-          </div>
-        </aside>
+      </div>
+      <div class="about-contact" style="margin-top: 1.5rem;">
+        <a href="https://www.instagram.com/casparschols/" target="_blank" rel="noopener noreferrer"
+          aria-label="Caspar Schols on Instagram" style="display:flex;align-items:center;gap:0.5rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
       </div>
     </div>
 
   </main>
 
   <footer class="detail-footer">
-    <p><em>Information on this website is for general purposes only and may not always be accurate, complete, or up to date.</em></p>
+    <p><em>Information on this website is for general purposes only and may not always be accurate, complete, or up to
+        date.</em></p>
   </footer>
 
   <script src="../js/main.js"></script>
 </body>
+
 </html>
