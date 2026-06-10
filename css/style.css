@@ -833,7 +833,7 @@ button {
 }
 
 .sidebar-links a {
-  font-size: 1rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   line-height: 1.8;
   transition: opacity var(--transition);
@@ -856,7 +856,7 @@ button {
 
 .sidebar-awards li {
   list-style: none;
-  font-size: 1rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   line-height: 1.8;
 }
