@@ -1081,6 +1081,45 @@ button {
   aspect-ratio: 1 / 1;
 }
 
+@media (min-width: 769px) {
+  .de-vice-responsive-gallery .slideshow {
+    display: flex;
+    gap: 0.5rem;
+    height: auto;
+    aspect-ratio: unset;
+    overflow: visible;
+    background: transparent;
+  }
+
+  .de-vice-responsive-gallery .slideshow-slide {
+    position: static;
+    opacity: 1 !important;
+    flex: 1;
+  }
+
+  .de-vice-responsive-gallery .slideshow-slide img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .de-vice-responsive-gallery .slideshow-controls {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .de-vice-responsive-gallery .slideshow {
+    height: 65vh;
+    aspect-ratio: unset;
+  }
+
+  .de-vice-responsive-gallery .slideshow-slide img {
+    object-fit: contain;
+  }
+}
+
 .mobile-slider-controls {
   display: none;
 }
