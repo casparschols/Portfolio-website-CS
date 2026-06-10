@@ -1006,10 +1006,7 @@ button {
 }
 
 /* Cabin ANNA drawings gallery */
-.cabin-drawings-gallery .slideshow-slide {
-  position: static;
-  opacity: 1;
-}
+
 
 @media (min-width: 769px) {
   .cabin-drawings-gallery {
@@ -1019,11 +1016,11 @@ button {
     aspect-ratio: unset;
     overflow: visible;
   }
-
-  .cabin-drawings-gallery .slideshow-slide {
-    flex: 1;
-  }
-
+.cabin-drawings-gallery .slideshow-slide {
+  position: static;
+  opacity: 1;
+  flex: 1;
+}
   .cabin-drawings-gallery img {
     width: 100%;
     height: 100%;
