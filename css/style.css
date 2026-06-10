@@ -1305,18 +1305,17 @@ button {
 }
 
 @media (max-width: 768px) {
-  .lighting-product {
-    grid-template-columns: 1fr;
-  }
-
-  .product-gallery .slideshow {
+  .lighting-gallery-top .slideshow {
     aspect-ratio: 3 / 4;
+    height: auto !important;
   }
 
-  .product-gallery .slideshow-slide img {
-    object-fit: contain;
+  .lighting-gallery-top .slideshow-slide img {
+    object-fit: cover;
   }
 }
+
+
 
 /* ===========================
    WORK WITH US / SPEAKING
