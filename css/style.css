@@ -830,6 +830,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  font-size: 0.78rem;
 }
 
 .sidebar-links a {
