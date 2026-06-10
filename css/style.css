@@ -1054,6 +1054,23 @@ button {
   aspect-ratio: 1 / 1;
 }
 
+@media (max-width: 768px) {
+  .de-vice-square-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .de-vice-square-gallery img {
+    flex: 0 0 85%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    scroll-snap-align: center;
+  }
+}
+
 .gallery-row img:hover {
   transform: scale(1.02);
 }
