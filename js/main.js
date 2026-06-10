@@ -374,6 +374,30 @@ function initVimeoControls() {
   });
 }
 
+function initMobileSliders() {
+  document.querySelectorAll('.mobile-slider-wrapper').forEach(function(wrapper) {
+    var slider = wrapper.querySelector('.mobile-slider');
+    var prev = wrapper.querySelector('.mobile-prev');
+    var next = wrapper.querySelector('.mobile-next');
+
+    if (!slider || !prev || !next) return;
+
+    prev.addEventListener('click', function() {
+      slider.scrollBy({
+        left: -slider.clientWidth * 0.9,
+        behavior: 'smooth'
+      });
+    });
+
+    next.addEventListener('click', function() {
+      slider.scrollBy({
+        left: slider.clientWidth * 0.9,
+        behavior: 'smooth'
+      });
+    });
+  });
+}
+
 /* ===========================
    INIT
    =========================== */
