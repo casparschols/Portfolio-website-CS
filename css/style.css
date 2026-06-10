@@ -1058,6 +1058,12 @@ button {
   display: none;
 }
 
+.mobile-slider-controls.slideshow-controls {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0;
+}
+
 @media (max-width: 768px) {
   .mobile-slider {
     display: flex;
