@@ -242,9 +242,7 @@ document.querySelectorAll('[data-slideshow]').forEach(function(slideshow) {
     e.stopPropagation();
 
     var idx = imgs.indexOf(clickedImg);
-    if (idx < 0) idx = 0;
-
-    openLb(imgs, idx);
+    openLb(imgs, Math.max(0, idx));
   });
 });
    
