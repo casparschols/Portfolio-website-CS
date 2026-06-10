@@ -1397,8 +1397,24 @@ button {
 }
 
 @media (max-width: 768px) {
-  .editorial-body {
+  .lighting-product {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  .product-gallery {
+    width: 100%;
+  }
+
+  .product-gallery .slideshow {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+  }
+
+  .product-info {
+    padding-top: 0;
   }
 }
 
