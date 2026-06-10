@@ -900,7 +900,9 @@ button {
 
 .video-wrap-small {
   height: 80vh;
-  width: calc(80vh * 9 / 16);
+  width: auto;
+  max-width: calc(80vh * 9 / 16);
+  aspect-ratio: 9 / 16;
   margin: 0 auto;
   overflow: hidden;
   background: #000;
@@ -910,6 +912,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 @media (max-width: 768px) {
@@ -920,7 +923,9 @@ button {
 
   .video-wrap-small {
     height: 60vh;
-    width: calc(60vh * 9 / 16);
+    width: auto;
+    max-width: calc(60vh * 9 / 16);
+    aspect-ratio: 9 / 16;
   }
 }
 
