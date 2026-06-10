@@ -234,9 +234,14 @@ document.querySelectorAll('[data-slideshow]').forEach(function(slideshow) {
 
   imgs.forEach(function(img) { img.style.cursor = 'zoom-in'; });
 
-  slideshow.addEventListener('click', function(e) {
-    var clickedImg = e.target.closest('img');
-    if (!clickedImg) return;
+slideshow.addEventListener('click', function(e) {
+  var clickedImg = e.target.closest('img');
+  if (!clickedImg) return;
+
+  if (window.innerWidth <= 768 && slideshow.closest('.detail-gallery-top')) {
+    var activeSlide = slideshow.querySelector('.slideshow-slide.active');
+    clickedImg = activeSlide ? activeSlide.querySelector('img') : clickedImg;
+  }
 
     e.preventDefault();
     e.stopPropagation();
