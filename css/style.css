@@ -1071,6 +1071,9 @@ button {
     gap: 1rem;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+
+    aspect-ratio: auto;
+    background: transparent;
   }
 
   .mobile-slider img {
@@ -1084,7 +1087,7 @@ button {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 0.75rem;
+    margin-top: 1rem;
   }
 }
 
