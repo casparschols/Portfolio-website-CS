@@ -1054,6 +1054,34 @@ button {
   aspect-ratio: 1 / 1;
 }
 
+.mobile-slider-controls {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-slider img {
+    flex: 0 0 85%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    scroll-snap-align: center;
+  }
+
+  .mobile-slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0.75rem;
+  }
+}
+
 @media (max-width: 768px) {
   .de-vice-square-gallery {
     display: flex;
