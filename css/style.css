@@ -1538,6 +1538,12 @@ button {
   }
 }
 
+@media (min-width: 1025px) {
+  .lighting-gallery-top .slideshow {
+    height: 65vh;
+  }
+}
+   
 @media (max-width: 1024px) {
 
   /* Restore generic gallery containers to block — JS slideshow takes over */
