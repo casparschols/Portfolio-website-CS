@@ -1345,7 +1345,7 @@ button {
   font-size: 0.75rem;
   color: var(--text-muted);
   letter-spacing: 0.08em;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .editorial-body {
