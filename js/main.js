@@ -402,8 +402,9 @@ function initMobileSliders() {
    INIT
    =========================== */
 document.addEventListener('DOMContentLoaded', function() {
-  initImagePlaceholders(); /* must run first — before lazy images load */
+  initImagePlaceholders();
   initSlideshows();
+  initMobileSliders();
   initMobileMenu();
   initBackToTop();
   initFadeIn();
