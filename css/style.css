@@ -1031,6 +1031,16 @@ button {
   gap: 0.5rem;
 }
 
+@media (max-width: 768px) {
+  .mobile-slider {
+    padding-bottom: 0;
+  }
+
+  .mobile-slider-controls {
+    margin-top: 1rem;
+  }
+}
+
 .gallery-row-5 {
   grid-template-columns: repeat(5, 1fr);
 }
