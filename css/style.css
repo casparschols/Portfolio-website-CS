@@ -1506,6 +1506,8 @@ button {
     display: block;
   }
 
+ @media (min-width: 1025px) {
+
   /* detail-gallery-top: override slideshow → horizontal strip */
   .detail-gallery-top .slideshow {
     display: flex;
@@ -1536,7 +1538,7 @@ button {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   /* Restore generic gallery containers to block — JS slideshow takes over */
   .gallery-grid,
