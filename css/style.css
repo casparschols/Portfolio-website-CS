@@ -1513,7 +1513,7 @@ button {
     display: flex;
     gap: 4px;
     position: static;
-    height: 65vh;
+   height: 320px;
     aspect-ratio: unset;
     background: none;
     overflow: visible;
