@@ -1196,6 +1196,7 @@ button {
     position: static;
     opacity: 1 !important;
     flex: 1;
+    pointer-events: auto;
   }
 
   .axis-responsive-gallery .slideshow-slide img {
@@ -1203,6 +1204,7 @@ button {
     aspect-ratio: 1 / 1;
     height: auto;
     object-fit: cover;
+    pointer-events: auto;
   }
 
   .axis-responsive-gallery .slideshow-controls {
