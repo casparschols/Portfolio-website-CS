@@ -1111,12 +1111,12 @@ button {
 
 @media (max-width: 768px) {
   .de-vice-responsive-gallery .slideshow {
-    height: 65vh;
-    aspect-ratio: unset;
+    aspect-ratio: 1 / 1;
+    height: auto;
   }
 
   .de-vice-responsive-gallery .slideshow-slide img {
-    object-fit: contain;
+    object-fit: cover;
   }
 }
 
