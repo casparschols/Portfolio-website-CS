@@ -1182,6 +1182,45 @@ button {
   }
 }
 
+@media (min-width: 769px) {
+  .axis-responsive-gallery .slideshow {
+    display: flex;
+    gap: 0.5rem;
+    height: auto;
+    aspect-ratio: unset;
+    overflow: visible;
+    background: transparent;
+  }
+
+  .axis-responsive-gallery .slideshow-slide {
+    position: static;
+    opacity: 1 !important;
+    flex: 1;
+  }
+
+  .axis-responsive-gallery .slideshow-slide img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .axis-responsive-gallery .slideshow-controls {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .axis-responsive-gallery .slideshow {
+    aspect-ratio: 3 / 4;
+    height: auto;
+  }
+
+  .axis-responsive-gallery .slideshow-slide img {
+    object-fit: cover;
+  }
+}
+
 /* ===========================
    LIGHTING PAGE
    =========================== */
