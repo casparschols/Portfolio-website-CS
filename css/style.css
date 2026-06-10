@@ -1308,6 +1308,14 @@ button {
   .lighting-product {
     grid-template-columns: 1fr;
   }
+
+  .product-gallery .slideshow {
+    aspect-ratio: 3 / 4;
+  }
+
+  .product-gallery .slideshow-slide img {
+    object-fit: contain;
+  }
 }
 
 /* ===========================
