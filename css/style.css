@@ -1050,6 +1050,10 @@ button {
   transition: transform 0.6s ease;
 }
 
+.de-vice-square-gallery img {
+  aspect-ratio: 1 / 1;
+}
+
 .gallery-row img:hover {
   transform: scale(1.02);
 }
