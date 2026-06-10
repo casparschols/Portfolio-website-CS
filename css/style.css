@@ -1101,24 +1101,6 @@ button {
   }
 }
 
-@media (max-width: 768px) {
-  .detail-slideshow .slideshow {
-    aspect-ratio: auto;
-    height: auto;
-    background: transparent;
-  }
-
-  .detail-slideshow .slideshow-slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-  }
-
-  .detail-slideshow .slideshow-controls {
-    margin-top: 1rem;
-  }
-}
 
 @media (max-width: 768px) {
   .de-vice-square-gallery {
