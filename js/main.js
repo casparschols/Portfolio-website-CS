@@ -227,18 +227,28 @@ function initLightbox() {
     if (Math.abs(diff) > 40) { diff > 0 ? nextLb() : prevLb(); }
   }, { passive: true });
 
-/* Slideshow containers — open at the clicked image */
+/* Slideshow containers — open clicked image, fallback to active slide */
 document.querySelectorAll('[data-slideshow]').forEach(function(slideshow) {
   var imgs = Array.from(slideshow.querySelectorAll('.slideshow-slide img'));
   if (!imgs.length) return;
 
-  imgs.forEach(function(img, i) {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      openLb(imgs, i);
-    });
+  imgs.forEach(function(img) { img.style.cursor = 'zoom-in'; });
+
+  slideshow.addEventListener('click', function(e) {
+    if (e.target.tagName !== 'IMG') return;
+
+    var clickedIdx = imgs.indexOf(e.target);
+
+    if (clickedIdx >= 0) {
+      openLb(imgs, clickedIdx);
+      return;
+    }
+
+    var activeSlide = slideshow.querySelector('.slideshow-slide.active');
+    var activeImg   = activeSlide ? activeSlide.querySelector('img') : null;
+    var activeIdx   = activeImg ? imgs.indexOf(activeImg) : 0;
+
+    openLb(imgs, Math.max(0, activeIdx));
   });
 });
 
