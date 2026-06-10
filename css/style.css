@@ -976,8 +976,8 @@ button {
 
 /* Bottom detail slideshows show images at actual size (like Missing Room) */
 .detail-slideshow .slideshow {
-  aspect-ratio: unset;
-  height: 80vh;
+aspect-ratio: 16 / 9;
+height: auto;
 }
 
 .detail-slideshow .slideshow-slide img {
