@@ -855,6 +855,23 @@ button {
   line-height: 1.8;
 }
 
+.sidebar-awards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sidebar-awards li {
+  list-style: none;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
 @media (max-width: 768px) {
   .detail-content {
     grid-template-columns: 1fr;
