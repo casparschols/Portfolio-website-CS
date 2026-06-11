@@ -228,7 +228,7 @@ lbImg.src = group[idx].src;
     if (Math.abs(diff) > 40) { diff > 0 ? nextLb() : prevLb(); }
   }, { passive: true });
 
-/* Slideshow containers — desktop top strips use clicked image; all real sliders use active image */
+/* Slideshow containers — desktop strips + lighting products use clicked image; all other real sliders use active image */
 document.querySelectorAll('[data-slideshow]').forEach(function(slideshow) {
   var imgs = Array.from(slideshow.querySelectorAll('.slideshow-slide img'));
   if (!imgs.length) return;
@@ -244,19 +244,21 @@ document.querySelectorAll('[data-slideshow]').forEach(function(slideshow) {
     e.preventDefault();
     e.stopPropagation();
 
-var isDesktopTopStrip =
-  window.innerWidth > 1024 &&
-  (
-    slideshow.closest('.detail-gallery-top') ||
-    slideshow.closest('.de-vice-responsive-gallery') ||
-     slideshow.closest('.product-gallery')
-  );
+    var shouldUseClickedImage =
+      slideshow.closest('.product-gallery') ||
+      (
+        window.innerWidth > 1024 &&
+        (
+          slideshow.closest('.detail-gallery-top') ||
+          slideshow.closest('.de-vice-responsive-gallery')
+        )
+      );
 
-var imgToOpen;
+    var imgToOpen;
 
-if (isDesktopTopStrip) {
-  imgToOpen = clickedImg;
-} else {
+    if (shouldUseClickedImage) {
+      imgToOpen = clickedImg;
+    } else {
       var activeSlide = slideshow.querySelector('.slideshow-slide.active');
       imgToOpen = activeSlide ? activeSlide.querySelector('img') : clickedImg;
     }
@@ -267,7 +269,6 @@ if (isDesktopTopStrip) {
     openLb(imgs, idx);
   });
 });
-
    
 /* Static lightbox galleries — open clicked image */
 document.querySelectorAll('[data-lightbox-gallery]').forEach(function(gallery) {
