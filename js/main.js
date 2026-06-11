@@ -244,16 +244,12 @@ document.querySelectorAll('[data-slideshow]').forEach(function(slideshow) {
     e.preventDefault();
     e.stopPropagation();
 
-    var shouldUseClickedImage =
-      slideshow.closest('.product-gallery') ||
-      (
-        window.innerWidth > 1024 &&
-        (
-          slideshow.closest('.detail-gallery-top') ||
-          slideshow.closest('.de-vice-responsive-gallery')
-        )
-      );
-
+var shouldUseClickedImage =
+  window.innerWidth > 1024 &&
+  (
+    slideshow.closest('.detail-gallery-top') ||
+    slideshow.closest('.de-vice-responsive-gallery')
+  );
     var imgToOpen;
 
     if (shouldUseClickedImage) {
@@ -289,7 +285,6 @@ document.querySelectorAll('[data-lightbox-gallery]').forEach(function(gallery) {
   var PLAIN = [
     '.gallery-row',
     '.freeform-gallery',
-    '.product-gallery',
     '.detail-single-image',
     '.about-image-col'
   ];
