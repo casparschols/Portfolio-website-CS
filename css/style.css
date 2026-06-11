@@ -1423,6 +1423,14 @@ button {
   }
 }
 
+.editorial-body .editorial-cta {
+  margin-top: 2rem;
+}
+
+.editorial-body .editorial-cta a {
+  display: inline-block;
+}
+
 /* ===========================
    INLINE VIDEO IN GRID
    =========================== */
