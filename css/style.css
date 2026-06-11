@@ -1431,6 +1431,16 @@ button {
   display: inline-block;
 }
 
+@media (max-width: 768px) {
+  .editorial-body {
+    display: block;
+  }
+
+  .editorial-body .editorial-cta {
+    margin-top: 1.5rem;
+  }
+}
+
 /* ===========================
    INLINE VIDEO IN GRID
    =========================== */
