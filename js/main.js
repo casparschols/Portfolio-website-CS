@@ -244,11 +244,12 @@ document.querySelectorAll('[data-slideshow]').forEach(function(slideshow) {
     e.preventDefault();
     e.stopPropagation();
 
- var isDesktopTopStrip =
+var isDesktopTopStrip =
   window.innerWidth > 1024 &&
   (
     slideshow.closest('.detail-gallery-top') ||
-    slideshow.closest('.de-vice-responsive-gallery')
+    slideshow.closest('.de-vice-responsive-gallery') ||
+    slideshow.closest('.product-gallery')
   );
 
     var imgToOpen;
