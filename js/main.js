@@ -193,7 +193,8 @@ function initLightbox() {
   }
 
   function updateLb() {
-    lbImg.src = group[idx].src;
+  if (!group[idx]) return;
+lbImg.src = group[idx].src;
     lbImg.alt = group[idx].alt || '';
     var many = group.length > 1;
     lbPrev.style.display = many ? '' : 'none';
