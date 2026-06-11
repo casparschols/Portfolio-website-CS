@@ -967,17 +967,6 @@ button {
   object-fit: cover;
 }
 
-.slideshow-slide {
-  pointer-events: none;
-}
-
-.slideshow-slide.active {
-  pointer-events: auto;
-}
-
-.detail-gallery-top .slideshow-slide {
-  pointer-events: auto;
-}
 
 /* Bottom detail slideshows show images at actual size (like Missing Room) */
 .detail-slideshow .slideshow {
