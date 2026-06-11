@@ -249,13 +249,12 @@ var isDesktopTopStrip =
   (
     slideshow.closest('.detail-gallery-top') ||
     slideshow.closest('.de-vice-responsive-gallery') ||
+     slideshow.closest('.product-gallery')
   );
-
-var isLightingProduct = !!slideshow.closest('.product-gallery');
 
 var imgToOpen;
 
-if (isDesktopTopStrip || isLightingProduct) {
+if (isDesktopTopStrip) {
   imgToOpen = clickedImg;
 } else {
       var activeSlide = slideshow.querySelector('.slideshow-slide.active');
