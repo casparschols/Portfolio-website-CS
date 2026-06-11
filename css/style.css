@@ -1490,8 +1490,6 @@ button {
    GALLERY — DESKTOP: ALL IMAGES SIDE BY SIDE
    =========================== */
 @media (min-width: 769px) {
-
-  /* Generic gallery classes */
   .gallery-grid,
   .gallery-top,
   .freeform-gallery,
@@ -1512,15 +1510,14 @@ button {
     object-fit: cover;
     display: block;
   }
+}
 
- @media (min-width: 1025px) {
-
-  /* detail-gallery-top: override slideshow → horizontal strip */
+@media (min-width: 1025px) {
   .detail-gallery-top .slideshow {
     display: flex;
     gap: 4px;
     position: static;
-   height: 320px;
+    height: 320px;
     aspect-ratio: unset;
     background: none;
     overflow: visible;
@@ -1543,17 +1540,13 @@ button {
   .detail-gallery-top .slideshow-controls {
     display: none;
   }
-}
 
-@media (min-width: 1025px) {
   .lighting-gallery-top .slideshow {
     height: 65vh;
   }
 }
-   
-@media (max-width: 1024px) {
 
-  /* Restore generic gallery containers to block — JS slideshow takes over */
+@media (max-width: 1024px) {
   .gallery-grid,
   .gallery-top,
   .project-gallery {
